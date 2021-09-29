@@ -1,0 +1,19 @@
+/*
+  미디어쿼리
+*/
+$desktop-width	: 1920px;
+$tablet-width		: 1024px;
+$mo-width		: 767px;
+
+// teblet
+@mixin tablet {
+	@media screen and (min-width: #{$mo-width + 1}) and (max-width: #{$tablet-width}) {
+		@content;
+	}
+}
+// mo
+@mixin mo {
+	@media screen and (max-width: #{$mo-width}) {
+		@content;
+	}
+}
