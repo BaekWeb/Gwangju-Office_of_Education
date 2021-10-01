@@ -1,0 +1,267 @@
+/*
+  header style
+*/
+.header {
+  position: relative;
+  // main
+  .main {
+    background-color: $main;
+    .content {
+      @include setFlex(flex,space-between,center);
+      width: 1260px;
+      height: 85px;
+      margin: 0 auto;
+      // gnb
+      .gnb {
+        > li {
+          display: inline-block;
+          padding: 0 20px;
+
+          &.on {
+            .dropMenu {
+              display: block;
+            }
+          }
+
+          h2 {
+            @include font-l;
+            position: relative;
+            line-height: 85px;
+            color: $white;
+            &::after {
+              @include setPosition(absolute, 45px, -12px, auto, auto, 1000);
+              display: none;
+              content: "";
+              width: 8px;
+              height: 8px;
+              border-radius: 100%;
+              background-color: #FFCC1E;
+            }
+            &:hover {
+              color:#FFCC1E;
+              &::after {
+                display: block;
+              }
+            }
+          }
+          // dropMenu
+          .dropMenu {
+            @include setPosition(absolute, 85px, 0, 0, 0, 1000);
+            display: none;
+            height: max-content;
+            &::after {
+              @include setPosition(absolute, 0, auto, auto, 0, -1);
+              content: "";
+              display: block;
+              width: 50%;
+              height: 100%;
+              background-color: $sub2;
+            }
+            > div {
+              @include setFlex(flex,center,flex-start);
+              position: relative;
+              width: 1260px;
+              margin: 0 auto;
+              white-space: nowrap;
+              .title {
+                @include font-x-l;
+                width: 210px;
+                padding: 20px 0;
+                color: $white;
+                &::before {
+                  content: "";
+                  display: inline-block;
+                  width: 30px;
+                  height: 30px;
+                  margin-right: 10px;
+                  background: url("./../images/icon/menu_title.png") no-repeat center;
+                }
+                &::after {
+                  @include setPosition(absolute, auto, auto, 0, -50px, 1000);
+                  content: "";
+                  display: inline-block;
+                  width: 235px;
+                  height: 180px;
+                  background: url("./../images/common/menu_ic.png") no-repeat center;
+                }
+              }
+              // dropItem
+              .dropItem {
+                flex: 1;
+                min-height: 300px;
+                background-color: $white;
+                > ul {
+                  display: flex;
+                  flex-wrap: wrap;
+                  > li {
+                    width: 210px;
+                    padding: 20px 15px;
+                    box-sizing: border-box;
+                    &:hover {
+                      h3 {
+                        color: $white;
+                        background-color: $sub;
+                      }
+                    }
+                    h3 {
+                      padding: 15px;
+                      border: 1px solid $sub;
+                      box-sizing: border-box;
+                      text-align: center;
+                    }
+                    .itemBox {
+                      margin: 5px 0;
+                      > li {
+                        @include font-s;
+                        position: relative;
+                        padding: 0 10px;
+                        line-height: 24px;
+                        &:hover {
+                          color: $sub;
+                          &::before {
+                          background: url("./../images/icon/depth_on.png") no-repeat center;
+                          }
+                        }
+                        &::before {
+                          @include setPosition(absolute, 50%, auto, auto, 0, 1000);
+                          transform: translate(0, -50%);
+                          content: " ";
+                          display: block;
+                          width: 5px;
+                          height: 5px;
+                          background: url("./../images/icon/depth_off.png") no-repeat center;
+                        }
+                        &::after {
+                          content: " ";
+                          display: inline-block;
+                          width: 10px;
+                          height: 10px;
+                          margin-left: 5px;
+                          background: url("./../images/icon/blank_ic2.png") no-repeat center;
+                        }
+                        > a {
+                          display: inline-block;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              // dropItem end
+            }
+          }
+          // dropMenu end
+        }
+      }
+      // gnb end
+      .slogan {
+        height: 100%;
+        padding: 21px 0;
+        box-sizing: border-box;
+        background-color: $white;
+      }
+    }
+  }
+  // main end
+  .sub {
+    @include font-x-s;
+    width: 1260px;
+    margin: 0 auto;
+    .content {
+      @include setFlex(flex, flex-end, center);
+      gap: 20px;
+      height: 60px;
+
+      ul {
+        &::after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+
+        li {
+          float: left;
+          margin: 0 10px;
+        }
+      }
+      // view - 확대 축소 원상태
+      .otherView {
+        height: 30px;
+        border: 1px solid;
+        border-radius: 15px;
+        box-sizing: border-box;
+        overflow: hidden;
+        &::after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+        .left,
+        .right {
+          height: 100%;
+          box-sizing: border-box;
+        }
+        .left {
+          float: left;
+          padding: 5px 15px;
+          color: $white;
+          background-color: $sub;
+        }
+        .right {
+          display: flex;
+          float: right;
+          padding: 3px 6px;
+          gap: 5px;
+          button {
+            background: $trans;
+            span {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              border-radius: 100%;
+              text-indent: -10000px;
+            }
+            &:nth-child(1) {
+              span {background: url("./../images/icon/text01.png") no-repeat center $sub;}
+            }
+            &:nth-child(2) {
+              span {background: url("./../images/icon/text02.png") no-repeat center $sub;}
+            }
+            &:nth-child(3) {
+              span {background: url("./../images/icon/text03.png") no-repeat center $sub3;}
+            }
+          }
+        }
+      }
+      // view - 확대 축소 원상태 end
+      // sim - 국가상징 & child - 어린이 홈페이지
+      .sim,
+      .child {
+        position: relative;
+        padding: 0 0 0 40px;
+        p a {
+          &::before {
+            @include setPosition(absolute, 50%, auto, auto, 0, 990);
+            transform: translate(0, -50%);
+            content: "";
+            display: block;
+          }
+        }
+      }
+      .sim p a::before {
+        width: 42px;
+        height: 27px;
+        left: -5px;
+        background: url("./../images/icon/main_sim.png") no-repeat center;
+      }
+      .child p a::before {
+        width: 24px;
+        height: 24px;
+        border: 1px solid #e2e2e2;
+        border-radius: 100%;
+        background: url("./../images/icon/q_ic13.png") no-repeat center;
+      }
+      // sim - 국가상징 & child - 어린이 홈페이지 end
+    }
+  }
+}

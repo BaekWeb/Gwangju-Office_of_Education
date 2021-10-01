@@ -24,33 +24,27 @@
 }
 // color
 $white: #ffffff;
-$white2: #cccccc;
-$black: #121212;
-$black2: #121212c5;
-$main: #FA3B3B;
+$white2: #FBFCFF;
+$black: #333333;
+$black2: #333a4c;
+$main: #1954A4;
+$sub: #4A78B6;
+$sub2: #345BA9;
+$sub3: #ff8e20;
 $trans: transparent;
 // font
-@mixin font-xs {
-  font-size: 0.6rem;
+@mixin font-x-s {
+  font-size: 13px;
 }
 @mixin font-s {
-  font-size: 0.7rem;
+  font-size: 14px;
 }
 @mixin font-m {
-  font-size: 0.8rem;
-}
-@mixin font-m_2 {
-  font-size: 0.9rem;
+  font-size: 16px;
 }
 @mixin font-l {
-  font-size: 1.2rem;
+  font-size: 18px;
 }
-@mixin font-l-2 {
-  font-size: 1.6rem;
-}
-@mixin font-xl {
-  font-size: 2.2rem;
-}
-@mixin font-xl-2 {
-  font-size: 2.8rem;
+@mixin font-x-l {
+  font-size: 22px;
 }

@@ -1,0 +1,150 @@
+/*
+  content_03 style -  공지사항 및 팝업박스
+*/
+.content_03 {
+  @include setFlex(flex,center,center);
+  gap: 20px;
+
+  .notice,
+  .popupBox {
+    height: 310px;
+    overflow: hidden;
+  }
+
+  // notice
+  .notice {
+    position: relative;
+    flex: 1;
+
+    .noticeBox {
+      position: relative;
+
+      &::before {
+        @include setPosition(absolute, auto, 0, -25px, 0, 960);
+        content: "";
+        display: block;
+        height: 1px;
+        border-bottom: 1px dashed #d5d5d5;
+      }
+
+      .notice-item {
+        display: inline-block;
+        &.on {
+          h2 {
+            position: relative;
+            border-radius: 25px;
+            color: $white;
+            background-color: #eb6001;
+
+            &::before {
+              @include setPosition(absolute, auto, auto, -12px, 50%,960);
+              display: block;
+              content: "";
+              width: 15px;
+              height: 15px;
+              background-color: #eb6001;
+              transform: rotate(45deg) translate(-50%, 0);
+            }
+            &::after {
+              @include setPosition(absolute, auto, auto, -30px, 50%,960);
+              display: block;
+              content: "";
+              width: 8px;
+              height: 8px;
+              border: 2px solid #eb6001;
+              border-radius: 100%;
+              background-color: $white;
+              transform: translate(-35%,0);
+            }
+          }
+          .content_box {
+            display: block;
+          }
+        }
+
+        h2 {
+          @include font-l;
+          padding: 10px 20px;
+        }
+        .content_box {
+          display: none;
+          @include setPosition(absolute,93px, auto, auto, 0, 960);
+          height: 216px;
+        
+          li {
+            display: block;
+            position: relative;
+            padding: 20px;
+            border: 1px solid #d5d5d5;
+            box-sizing: border-box;
+
+            .title {
+              @include font-s;
+              height: 70px;
+              padding: 15px 25px;
+              border: 2px solid #d5d5d5;
+              border-radius: 25px;
+              box-sizing: border-box;
+              
+              span {
+                display: -webkit-box;
+                overflow: hidden;
+                word-wrap: break-word;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+              }
+              
+
+              &:hover {
+                border: 2px solid #fbb8bd;
+                background: #fff1f0;
+              }
+            }
+
+            .text {
+              @include font-x-s;
+              display: -webkit-box;
+              height: 32px;
+              overflow: hidden;
+              margin-top: 20px;
+              word-wrap: break-word;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+
+              &:hover {
+                a {
+                  text-decoration: underline;
+                }
+              }
+            }
+            .data {
+              @include setPosition(absolute, auto, 0,0,0, 960);
+              @include font-s;
+              padding: 10px 0;
+              text-align: center;
+              background-color: #ebebeb;
+            }
+          }
+        }
+      }
+    }
+
+    .btn {
+      @include setPosition(absolute,0,10px,auto,auto,970);
+      @include setFlex(flex,center,center);
+      gap: 5px;
+      height: 43px;
+
+      li {
+        cursor: pointer;
+      }
+    }
+  }
+  // notice end
+  // popup
+  .popupBox {
+    width: 295px;
+  }
+  // popup end
+
+}

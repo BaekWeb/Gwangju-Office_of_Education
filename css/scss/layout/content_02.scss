@@ -1,0 +1,192 @@
+/*
+  content_02 style -  선언서 & 메인 비쥬얼 & 카드뉴스
+*/
+.content_02 {
+  @include setFlex(flex, center, center);
+  gap: 20px;
+  .manifesto,
+  .visual,
+  .cardNews {
+    height: 390px;
+  }
+
+  // 선언서
+  .manifesto {
+    position: relative;
+    width: 300px;
+    padding: 23px 0 23px 21px;
+    border: 2px solid #7aafdf;
+    border-radius: 4px;
+    box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.17);
+    box-sizing: border-box;
+    background-color: #f4faff;
+
+    .title {
+      @include setPosition(absolute, auto, 10px,23px,10px, 990);
+      text-align: center;
+      line-height: 44px;
+      color: $white;
+      background: $black2;
+    }
+    .pic {
+      @include setPosition(absolute, auto, auto,67px,10px, 990);
+    }
+    .btn {
+      @include setPosition(absolute, auto, 10px,67px,auto, 990);
+      > li {
+        @include font-s;
+        &:hover {
+          a {
+            text-decoration: underline;
+          }
+        }
+        a {
+          position: relative;
+          width: 110px;
+          margin-bottom: 10px;
+          padding: 7px 5px 7px 30px;
+          border: 1px dotted $sub2;
+          border-radius: 20px;
+          box-sizing: border-box;
+          font-weight: 700;
+          &:nth-child(2) {
+            background-color: $white;
+            &::before {
+              background-color: #285eb6;
+            }
+          }
+          &::before {
+            @include setPosition(absolute,50%,auto,auto,-10px,980);
+            transform: translate(0, -50%);
+            display: block;
+            content: "";
+            width: 34px;
+            height: 34px;
+            border-radius: 100%;
+            background: url("./../images/icon/mani_ic.png") no-repeat center;
+            background-color: #1e3f7f;
+          }
+        }
+      }
+    }
+  }
+  // 선언서 end
+  // 메인 비쥬얼
+  .visual {
+    flex: 1;
+
+    .swiper-wrapper {
+      .swiper-slide {
+        .img {
+          width: 100%;
+        }
+        .text {
+          @include setPosition(absolute,auto,0,0,0,970);
+          @include font-m;
+          transform: translateY(52px);
+          padding: 0 120px;
+          
+          text-align: left;
+          line-height: 52px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          color: $white;
+
+          background-color: rgba(0,0,0,.5);
+          transition: 1s;
+        }
+      }
+      .swiper-slide-active {
+        .text {
+          transform: translateY(0);
+          transition: 1s;
+        }
+      }
+    }
+    .btn,
+    .visual-pagenation {
+      @include setFlex(flex, center,center);
+      gap: 5px;
+      width: auto;
+      height: 52px;
+      color: $white;
+    }
+    .btn {
+      @include setPosition(absolute,auto,auto,0,10px, 970);
+      li {
+        position: relative;
+        width: 28px;
+        height: 28px;
+        border: 2px solid $white;
+        border-radius: 100%;
+        box-sizing: border-box;
+        cursor: pointer;
+        img {
+          @include setPosition(absolute, 50%,auto,auto,50%,970);
+          transform: translate(-50%,-50%);
+        }
+        &.visual-stop,
+        &.visual-start {
+          display: none;
+          &.on {
+            display: block;
+          }
+        }
+      }
+    }
+    .visual-pagenation {
+      @include setPosition(absolute,auto,10px,0,auto, 970);
+      @include font-l;
+
+      .swiper-pagination-current {
+        margin-bottom: 5px;
+        font-size: 26px;
+      }
+    }
+  }
+  // 메인 비쥬얼 end
+  // 카드뉴스
+  .cardNews {
+    position: relative;
+    width: 295px;
+
+    .title {
+      height: 45px;
+      padding: 0 10px;
+      line-height: 45px;
+      color: $white;
+      background-color: $sub2;
+    }
+    .btn {
+      @include setPosition(absolute,0,10px,auto,auto,970);
+      @include setFlex(flex,center,center);
+      gap: 5px;
+      height: 45px;
+
+      li {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        border-radius: 5px;
+        background-color: $white;
+        cursor: pointer;
+        img {
+          @include setPosition(absolute, 50%,auto,auto,50%,970);
+          transform: translate(-50%,-50%);
+        }
+        &.card-stop,
+        &.card-start {
+          display: none;
+          &.on {
+            display: block;
+          }
+        }
+      }
+    }
+    .card {
+      height: 345px;
+    }
+  }
+  // 카드뉴스 end
+}

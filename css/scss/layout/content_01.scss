@@ -1,0 +1,70 @@
+/*
+  content_01 style - 슬로건 & 찾기 & sns
+*/
+.content_01 {
+  @include setFlex(flex, space-between,center);
+  // search
+  .search {
+    border: 2px solid $main;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+
+    form {
+      @include setFlex(flex, center, center);
+      margin: 0;
+
+      div {
+        position: relative;
+        select,
+        input[type="text"],
+        input[type="submit"] {
+          height: 50px;
+          padding: 5px 10px;
+          border: none;
+          box-sizing: border-box;
+          background-color: $trans;
+        }
+        input[type="text"] {
+          width: 285px;
+          padding: 0 40px 0 10px;
+        }
+        .key {
+          @include setPosition(absolute, 50%, 10px, auto, auto, 990);
+          transform: translate(0, -50%);
+          text-indent: -10000px;
+          
+          a {
+            width: 24px;
+            height: 24px;
+            background: url("./../images/icon/keyboard.png") no-repeat center;
+          }
+        }
+        input[type="submit"] {
+          width: 50px;
+          text-indent: -10000px;
+          background: url("./../images/icon/search_icon.png") no-repeat center $sub2;
+        }
+      }
+    }
+  }
+  // search end
+  // sns
+  .sns {
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    h2 {
+      float: right;
+    }
+    ul {
+      float: left;
+      margin: 15px 10px;
+      li {
+        display: inline-block;
+      }
+    }
+  }
+  // sns
+}
