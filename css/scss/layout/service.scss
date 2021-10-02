@@ -1,0 +1,243 @@
+/*
+  service style
+*/
+.service {
+  background: url("./../images/common/main_pat_bg.png") no-repeat center;
+
+  .content {
+    @include setFlex(flex,center,center);
+    gap: 20px;
+    width: 1260px;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    .left,
+    .main {
+      height: 355px;
+    }
+
+    // left title
+    .left {
+      position: relative;
+      width: 300px;
+      padding: 20px;
+      border-radius: 15px 0 0 15px;
+      box-sizing: border-box;
+      background: url("./../images/common/ser_pat.png") no-repeat center;
+      background-size: cover;
+
+      .title {
+        width: 87px;
+        height: 24px;
+        text-indent: -10000px;
+        background: url("./../images/icon/ser_title.png") no-repeat center;
+      }
+      .text {
+        @include font-s;
+        margin-top: 10px;
+        text-align: center;
+        color: $white;
+      }
+
+      img {
+        @include setPosition(absolute, 50%, auto,auto,50%,950);
+        transform: translate(-50%, -64%);
+      }
+
+      .btn {
+        margin: 130px auto 0 auto;
+
+        li {
+          @include font-s;
+          margin: 10px 0;
+          line-height: 38px;
+          border-radius: 19px;
+          background-color: $white;
+          overflow: hidden;
+
+          &:hover {
+            font-weight: 700;
+          }
+          
+          a {
+            position: relative;
+            padding: 0 45px 0 60px;
+            &::after {
+              @include setPosition(absolute,0,0,auto,auto,940);
+              content: "";
+              display: block;
+              width: 39px;
+              height: 39px;
+              background: url("./../images/icon/ser_arrow.png") no-repeat center $main;
+            }
+          }
+
+          &:nth-child(1) {
+            a {
+              background: url("./../images/icon/ser_ic1.png") 30px 10px no-repeat;
+            }
+          }
+          &:nth-child(2) {
+            a {
+              background: url("./../images/icon/ser_ic2.png") 30px 10px no-repeat;
+            }
+          }
+        }
+      }
+    }
+    // left title end
+    // main
+    .main {
+      position: relative;
+      flex: 1;
+      border-radius: 0 15px 0 0;
+      background-color: $white;
+
+      h2 {
+        @include setPosition(absolute, -10px, auto,auto, 20px, 940);
+        width: 115px;
+        height: 53px;
+        text-indent: -10000px;
+        background: url(./../images/icon/all_title.png) no-repeat center;
+      }
+      .main_cont {
+        @include setFlex(flex, center,center);
+        gap: 80px;
+        position: relative;
+        height: 40px;
+        padding: 20px 0 15px 0;
+        border-bottom: 1px dashed #d5d5d5;
+        // 1st tab item
+        .mainItem {
+          display: inline-block;
+
+          &.on {
+            .serviceBox {
+              @include setFlex(flex,center,center);
+              gap: 80px;
+            }
+
+            h3 {
+              &::before {
+                background: url("./../images/icon/all_cir_on.png") no-repeat center;
+              }
+            }
+          }
+
+          h3 {
+            @include font-l;
+            position: relative;
+            width: 125px;
+            text-align: center;
+
+            &::before {
+              @include setPosition(absolute, auto, auto, -37px ,0, 930);
+              content: "";
+              display: block;
+              width: 100%;
+              height: 30px;
+              background: url("./../images/icon/all_cir.png") no-repeat center;
+            }
+          }
+
+          .serviceBox {
+            @include setPosition(absolute,95px,20px,auto,20px,930);
+            display: none;
+            height: 50px;
+            border: 1px solid #d3e1df;
+            background-color: #f5fbfa;
+            // 2st tab item
+            li {
+              &.on {
+                h4 {
+                  p {
+                    display: inline-block;
+                    padding: 7px 10px;
+                    border-radius: 25px;
+                    box-shadow: 2px 3px 0px #cdcdcd;
+                    color: $white;
+                    background: #22ba98;
+                  }
+                }
+                .tabMenu {
+                  @include setFlex(flex,center,flex-start);
+                }
+              }
+
+              h4 {
+                @include font-m;
+                width: 125px;
+                text-align: center;
+              }
+              // tabMenu 컨텐트
+              .tabMenu {
+                @include setPosition(absolute,70px,auto,auto,0,930);
+                display: none;
+                width: 100%;
+
+                // left title
+                .title {
+                  width: 190px;
+                  img {
+                    margin: 0 auto;
+                  }
+                  p {
+                    @include font-s;
+                    text-align: center;
+                  }
+                }
+                // left title end
+                .mainContent {
+                  flex: 1;
+                  height: 145px;
+                  overflow-y: auto;
+                  &::after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                  }
+                  li {
+                    @include font-s;
+                    float: left;
+                    position: relative;
+                    width: 25%;
+                    line-height: 36px;
+                    letter-spacing: -1px;
+                    
+                    a {
+                      padding: 0 5px 0 20px;
+                      box-sizing: border-box;
+                      overflow: hidden;
+                      white-space: nowrap;
+                      text-overflow: ellipsis;
+
+                      &:hover {
+                        &::before {
+                          background: url("./../images/icon/all_dot2.png") no-repeat center;
+                        }
+                      }
+
+                      &::before {
+                        @include setPosition(absolute,50%,auto,auto,0,930);
+                        content: "";
+                        display: block;
+                        width: 17px;
+                        height: 17px;
+                        background: url("./../images/icon/all_dot.png") no-repeat center;
+                        transform: translate(0, -50%);
+                      }
+                    }
+                  }
+                }
+              }
+              // tabMenu 컨텐트
+            }
+            // 2st tab item end
+          }
+        }
+        // 1st tab item end
+      }
+    }
+    // main end
+  }
+}

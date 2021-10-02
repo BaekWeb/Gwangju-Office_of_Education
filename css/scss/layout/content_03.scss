@@ -58,7 +58,8 @@
             }
           }
           .content_box {
-            display: block;
+            opacity: 1;
+            z-index: 970;
           }
         }
 
@@ -67,9 +68,9 @@
           padding: 10px 20px;
         }
         .content_box {
-          display: none;
           @include setPosition(absolute,93px, auto, auto, 0, 960);
           height: 216px;
+          opacity: 0;
         
           li {
             display: block;
@@ -143,7 +144,35 @@
   // notice end
   // popup
   .popupBox {
+    position: relative;
     width: 295px;
+
+    .btn {
+      @include setPosition(absolute,0,10px,auto,auto,970);
+      @include setFlex(flex,center,center);
+      gap: 5px;
+      height: 45px;
+
+      li {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        border-radius: 5px;
+        background-color: $white;
+        cursor: pointer;
+        img {
+          @include setPosition(absolute, 50%,auto,auto,50%,970);
+          transform: translate(-50%,-50%);
+        }
+        &.popupBox-stop,
+        &.popupBox-start {
+          display: none;
+          &.on {
+            display: block;
+          }
+        }
+      }
+    }
   }
   // popup end
 

@@ -52,11 +52,11 @@ $(function() {
     addClass("on");
   })
 
-  // 카드 슬라이드
+  // notice 슬라이드
   var swiper3 = new Swiper(".content_box", {
     slidesPerView: 3,
     spaceBetween: 30,
-    slidesPerGroup: 2,
+    slidesPerGroup: 3,
     loop: true,
     loopFillGroupWithBlank: true,
     navigation: {
@@ -64,4 +64,58 @@ $(function() {
       nextEl: ".notice-next",
     },
   });
+
+   // popupBox 슬라이드
+  var swiper4 = new Swiper(".popupBox", {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: true,
+    navigation: {
+      prevEl: ".popupBox-prev",
+      nextEl: ".popupBox-next",
+    },
+  });
+
+  $(".popupBox-stop").on("click", function() {
+    swiper.autoplay.stop();
+    $(this).removeClass("on").next(".popupBox-start").
+    addClass("on");
+  })
+  
+  $(".popupBox-start").on("click", function() {
+    swiper.autoplay.start();
+    $(this).removeClass("on").prev(".popupBox-stop").
+    addClass("on");
+  })
+   // popupBox 슬라이드 end
+
+   // quickMenu 슬라이드
+  var swiper5 = new Swiper(".quickMenu", {
+    slidesPerView: 9,
+    slidesPerGroup: 9,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    autoplay: {
+      delay: 10000,
+      disableOnInteraction: true,
+    },
+    navigation: {
+      prevEl: ".quickMenu-prev",
+      nextEl: ".quickMenu-next",
+    },
+  });
+
+  $(".quickMenu-stop").on("click", function() {
+    swiper.autoplay.stop();
+    $(this).removeClass("on").next(".quickMenu-start").
+    addClass("on");
+  })
+  
+  $(".quickMenu-start").on("click", function() {
+    swiper.autoplay.start();
+    $(this).removeClass("on").prev(".quickMenu-stop").
+    addClass("on");
+  })
+   // quickMenu 슬라이드 end
+
 })

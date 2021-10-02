@@ -1,0 +1,79 @@
+/*
+  content_04 style -  퀵메뉴 , 바로가기 메뉴
+*/
+.content_04 {
+  @include setFlex(flex,center,center);
+  height: 110px;
+  border: 1px dashed #3e7bbe;
+  border-radius: 55px;
+
+
+  // 퀵 타이틀
+  .left {
+    position: relative;
+    margin-left: -3px;
+    .title {
+      width: 120px;
+      height: 115px;
+      text-indent: -10000px;
+      background: url("./../images/common/quick_title.png") no-repeat center;
+      background-size: cover;
+    }
+    .btn {
+      @include setPosition(absolute,auto,auto,0,50%,970);
+      @include setFlex(flex,center,center);
+      gap: 10px;
+      transform: translate(-50%, -20px);
+      li {
+        position: relative;
+        width: 11px;
+        height: 11px;
+        cursor: pointer;
+        img {
+          @include setPosition(absolute, 50%,auto,auto,50%,970);
+          transform: translate(-50%,-50%);
+        }
+        &.quickMenu-stop,
+        &.quickMenu-start {
+          display: none;
+          &.on {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  // 퀵 타이틀 end
+  // 퀵 컨텐트
+  .quickMenu {
+    width: 1100px;
+    margin-left: 0;
+
+    .swiper-slide {
+      align-items: flex-start;
+      padding: 10px 0;
+      box-sizing: border-box;
+      i {
+        position: relative;
+        display: block;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        border-radius: 100%;
+        box-shadow: inset 0px 0px 4px rgb(182, 182, 182);
+        background-color: $white;
+
+        img {
+          @include setPosition(absolute, 50%,auto,auto,50%,950);
+          width: auto;
+          height: auto;
+          transform: translate(-50%,-50%);
+        }
+      }
+      span {
+        @include font-x-s;
+      }
+    }
+  }
+  // 퀵 컨텐트 end
+}
