@@ -1,0 +1,56 @@
+/*
+  footer style
+*/
+.footer {
+  @include font-s;
+  color: $white;
+  background-color: #29313a;
+
+  .content {
+    width: 1260px;
+    margin: 0 auto;
+    // info
+    .info {
+      @include setFlex(flex,space-between,center);
+      height: 60px;
+
+      .menu,
+      .icon {
+        li {
+          display: inline-block;
+        }
+      }
+
+      .menu li {
+        margin-right: 40px;
+        &:hover {
+          font-weight: 700;
+        }
+        &.private {
+          color: #ffebae;
+        }
+
+        a {
+          padding: 10px 0;
+        }
+      }
+
+      .icon li {
+        margin-left: 2px;
+      }
+    }
+    // info end
+    // copy 
+    .copy {
+      padding: 20px 0;
+      color: #dcdcdc;
+      p {
+        line-height: 24px;
+        span {
+          margin-right: 10px;
+        }
+      }
+    }
+    // copy end
+  }
+}

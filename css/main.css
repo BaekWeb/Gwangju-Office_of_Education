@@ -963,6 +963,7 @@ img {
 .content_03 .notice .noticeBox .notice-item h2 {
   font-size: 18px;
   padding: 10px 20px;
+  cursor: pointer;
 }
 
 .content_03 .notice .noticeBox .notice-item .content_box {
@@ -1407,6 +1408,7 @@ img {
   position: relative;
   width: 125px;
   text-align: center;
+  cursor: pointer;
 }
 
 .service .content .main .main_cont .mainItem h3::before {
@@ -1462,6 +1464,7 @@ img {
   font-size: 16px;
   width: 125px;
   text-align: center;
+  cursor: pointer;
 }
 
 .service .content .main .main_cont .mainItem .serviceBox li .tabMenu {
@@ -1538,6 +1541,139 @@ img {
   background: url("./../images/icon/all_dot.png") no-repeat center;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
+}
+
+/*
+  banner style
+*/
+.banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  width: 1260px;
+  height: 85px;
+  margin: 0 auto;
+}
+
+.banner .title {
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.banner .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  height: 45px;
+}
+
+.banner .btn li {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.banner .btn li img {
+  width: 100%;
+  height: 100%;
+}
+
+.banner .btn li.banner-stop, .banner .btn li.banner-start {
+  display: none;
+}
+
+.banner .btn li.banner-stop.on, .banner .btn li.banner-start.on {
+  display: block;
+}
+
+.banner .bannerCont {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.banner .bannerCont .swiper-wrapper .swiper-slide {
+  height: 45px;
+}
+
+/*
+  footer style
+*/
+.footer {
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #29313a;
+}
+
+.footer .content {
+  width: 1260px;
+  margin: 0 auto;
+}
+
+.footer .content .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+}
+
+.footer .content .info .menu li,
+.footer .content .info .icon li {
+  display: inline-block;
+}
+
+.footer .content .info .menu li {
+  margin-right: 40px;
+}
+
+.footer .content .info .menu li:hover {
+  font-weight: 700;
+}
+
+.footer .content .info .menu li.private {
+  color: #ffebae;
+}
+
+.footer .content .info .menu li a {
+  padding: 10px 0;
+}
+
+.footer .content .info .icon li {
+  margin-left: 2px;
+}
+
+.footer .content .copy {
+  padding: 20px 0;
+  color: #dcdcdc;
+}
+
+.footer .content .copy p {
+  line-height: 24px;
+}
+
+.footer .content .copy p span {
+  margin-right: 10px;
 }
 
 /* vander - 라이브러리 */

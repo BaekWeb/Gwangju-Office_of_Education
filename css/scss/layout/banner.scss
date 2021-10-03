@@ -1,0 +1,48 @@
+/*
+  banner style
+*/
+.banner {
+  @include setFlex(flex,center,center);
+  gap: 10px;
+  width: 1260px;
+  height: 85px;
+  margin: 0 auto;
+  
+  .title {
+    @include font-l;
+    white-space: nowrap;
+  }
+
+  .btn {
+    @include setFlex(flex,center,center);
+    gap: 10px;
+    height: 45px;
+
+    li {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      &.banner-stop,
+      &.banner-start {
+        display: none;
+        &.on {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .bannerCont {
+    height: max-content;
+    .swiper-wrapper {
+      .swiper-slide {
+        height: 45px;
+      }
+    }
+  }
+}

@@ -129,6 +129,7 @@
             position: relative;
             width: 125px;
             text-align: center;
+            cursor: pointer;
 
             &::before {
               @include setPosition(absolute, auto, auto, -37px ,0, 930);
@@ -168,6 +169,7 @@
                 @include font-m;
                 width: 125px;
                 text-align: center;
+                cursor: pointer;
               }
               // tabMenu 컨텐트
               .tabMenu {

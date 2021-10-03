@@ -118,4 +118,33 @@ $(function() {
   })
    // quickMenu 슬라이드 end
 
+  // banner 슬라이드
+  var swiper6 = new Swiper(".bannerCont", {
+    slidesPerView: 6,
+    slidesPerGroup: 6,
+    spaceBetween: 20,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    autoplay: {
+      delay: 10000,
+      disableOnInteraction: true,
+    },
+    navigation: {
+      prevEl: ".banner-prev",
+      nextEl: ".banner-next",
+    },
+  });
+
+  $(".banner-stop").on("click", function() {
+    swiper.autoplay.stop();
+    $(this).removeClass("on").next(".banner-start").
+    addClass("on");
+  })
+  
+  $(".banner-start").on("click", function() {
+    swiper.autoplay.start();
+    $(this).removeClass("on").prev(".banner-stop").
+    addClass("on");
+  })
+   // banner 슬라이드 end
 })

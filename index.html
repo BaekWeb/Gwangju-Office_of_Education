@@ -19,6 +19,7 @@
   <script src="./js/dropMenu.js"></script>
   <script src="./js/notice_drop.js"></script>
   <script src="./js/service.js"></script>
+  <script src="./js/zoom.js"></script>
   
   <!-- swiper -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
@@ -2196,70 +2197,85 @@
     <section class="banner">
       <h2 class="title">배너모음</h2>
       
-      <ul class="button">
-        <li><button class="up">위</button></li>
-        <li><button class="down">아래</button></li>
-        <li><button class="stop">정지</button></li>
-        <li><button class="more">더보기</button></li>
+      <ul class="btn">
+        <li class="banner-prev">
+          <img src="./images/icon/banner_btn01.png" alt="이전페이지보기">
+        </li>
+        <li class="banner-next">
+          <img src="./images/icon/banner_btn02.png" alt="다음페이지보기">
+        </li>
+        <li class="banner-stop on">
+          <img src="./images/icon/banner_stop.png" alt="정지버튼">
+        </li>
+        <li class="banner-start">
+          <img src="./images/icon/banner-start.png" alt="시작버튼">
+        </li>
+        <li class="banner-view">
+          <img src="./images/icon/banner_btn03.png" alt="더보기">
+        </li>
       </ul>
 
-      <ul class="content">
-        <li><a href=""><img src="./images/common/20100222_171346_074521500_thumb.gif" alt="정보공개시스템 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100222_171408_032239700_thumb.gif" alt="학교알리미 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100222_171514_062373800_thumb.gif" alt="공무원연금공단 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100222_171934_007219500_thumb.gif" alt="학교교직원공제회 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100222_171955_035235900_thumb.gif" alt="광주교원단체 총연합회 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100223_170139_080856600_thumb.gif" alt="광주광역시교육청-공무원노동조합 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100223_170258_038464800_thumb.gif" alt="그린i-net 청소년 인터넷안전항 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100414_161944_025417400_thumb.gif" alt="전근교직원노동조합[광주지부] 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100415_100909_084697200_thumb.gif" alt="광주광역시-청소년상담지원센터 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100608_105929_016736900_thumb.gif" alt="외국국적동포-고용정보 제공 서비스 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100614_181555_095250500_thumb.gif" alt="청렴한세상 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100712_111907_002249400_thumb.gif" alt="학교급식정보센터 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100816_131252_083286700_thumb.gif" alt="민원24 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100830_103147_003341500_thumb.gif" alt="학부모지원센터 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20100928_101440_049779400_thumb.gif" alt="문화재청 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20101110_093752_044756600_thumb.gif" alt="어린이문화재청 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20101110_094205_027651400_thumb.gif" alt="글로벌 역사 외교 아카데미 바로가기"></a></li>
-        <li><a href=""><img src="./images/common/20101115_175822_005884300_thumb.gif" alt="맞춤형 복지포탈 바로가기"></a></li>        
-      </ul>
+      <div class="bannerCont swiper">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100222_171346_074521500_thumb.gif" alt="정보공개시스템 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100222_171408_032239700_thumb.gif" alt="학교알리미 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100222_171514_062373800_thumb.gif" alt="공무원연금공단 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100222_171934_007219500_thumb.gif" alt="학교교직원공제회 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100222_171955_035235900_thumb.gif" alt="광주교원단체 총연합회 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100223_170139_080856600_thumb.gif" alt="광주광역시교육청-공무원노동조합 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100223_170258_038464800_thumb.gif" alt="그린i-net 청소년 인터넷안전항 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100414_161944_025417400_thumb.gif" alt="전근교직원노동조합[광주지부] 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100415_100909_084697200_thumb.gif" alt="광주광역시-청소년상담지원센터 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100608_105929_016736900_thumb.gif" alt="외국국적동포-고용정보 제공 서비스 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100614_181555_095250500_thumb.gif" alt="청렴한세상 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100712_111907_002249400_thumb.gif" alt="학교급식정보센터 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100816_131252_083286700_thumb.gif" alt="민원24 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100830_103147_003341500_thumb.gif" alt="학부모지원센터 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20100928_101440_049779400_thumb.gif" alt="문화재청 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20101110_093752_044756600_thumb.gif" alt="어린이문화재청 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20101110_094205_027651400_thumb.gif" alt="글로벌 역사 외교 아카데미 바로가기"></a></li>
+          <li class="swiper-slide"><a href=""><img src="./images/common/20101115_175822_005884300_thumb.gif" alt="맞춤형 복지포탈 바로가기"></a></li>        
+        </ul>
+      </div>
     </section>
     <!-- banner end-->
 
     <footer class="footer">
       <div class="content">
-        <ul class="menu">
-          <li><a href="">홈페이지도우미</a></li>
-          <li><a href="">저작권정책</a></li>
-          <li><a href="">이메일무단수집거부</a></li>
-          <li><a href="">개인정보처리방침</a></li>
-          <li><a href="">영상정보처리기기운영·관리방침</a></li>
-          <li><a href="">오시는길</a></li>
-        </ul>
-
-        <ul class="icon">
-          <li><a href=""><img src="./images/icon/view_icon01.png" alt="한글 뷰어다운로드"></a></li>
-          <li><a href=""><img src="./images/icon/view_icon02.png" alt="아크로뱃 뷰어다운로드"></a></li>
-          <li><a href=""><img src="./images/icon/view_icon03.png" alt="엑셀 뷰어다운로드"></a></li>
-          <li><a href=""><img src="./images/icon/view_icon04.png" alt="파워포인트 뷰어다운로드"></a></li>
-          <li><a href=""><img src="./images/icon/view_icon05.png" alt="마이크로소프트 오피스 워드 뷰어다운로드"></a></li>
-        </ul>
-      </div>
-
-      <div class="copy">
-        <p>
-          <span>우&#41; 61987 광주광역시 서구 화운로 93</span>
-          <span>대표전화 : 062-380-4500, 062-1396(09:00~18:00)</span>
-          <span>당직실 : 062-380-4580~1(평일 야간, 휴일)</span>
-        </p>
-        <p>
-          <span>팩스번호 : 민원실 062-375-9383</span>
-          <span>문서실 062-375-7994</span>
-          <span>당직실 062-375-7995</span>
-        </p>
-        <p class="Copyright">
-          Copyright &copy; www.gen.go.kr All rights reserved.
-        </p>
+        <div class="info">
+          <ul class="menu">
+            <li><a href="">홈페이지도우미</a></li>
+            <li><a href="">저작권정책</a></li>
+            <li><a href="">이메일무단수집거부</a></li>
+            <li class="private"><a href="">개인정보처리방침</a></li>
+            <li><a href="">영상정보처리기기운영·관리방침</a></li>
+            <li><a href="">오시는길</a></li>
+          </ul>
+  
+          <ul class="icon">
+            <li><a href=""><img src="./images/icon/view_icon01.png" alt="한글 뷰어다운로드"></a></li>
+            <li><a href=""><img src="./images/icon/view_icon02.png" alt="아크로뱃 뷰어다운로드"></a></li>
+            <li><a href=""><img src="./images/icon/view_icon03.png" alt="엑셀 뷰어다운로드"></a></li>
+            <li><a href=""><img src="./images/icon/view_icon04.png" alt="파워포인트 뷰어다운로드"></a></li>
+            <li><a href=""><img src="./images/icon/view_icon05.png" alt="마이크로소프트 오피스 워드 뷰어다운로드"></a></li>
+          </ul>
+        </div>
+  
+        <div class="copy">
+          <p>
+            <span>우&#41; 61987 광주광역시 서구 화운로 93</span>
+            <span>대표전화 : 062-380-4500, 062-1396(09:00~18:00)</span>
+            <span>당직실 : 062-380-4580~1(평일 야간, 휴일)</span>
+          </p>
+          <p>
+            <span>팩스번호 : 민원실 062-375-9383</span>
+            <span>문서실 062-375-7994</span>
+            <span>당직실 062-375-7995</span>
+          </p>
+          <p class="Copyright">
+            Copyright &copy; www.gen.go.kr All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   </div>

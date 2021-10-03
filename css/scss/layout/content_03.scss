@@ -66,6 +66,7 @@
         h2 {
           @include font-l;
           padding: 10px 20px;
+          cursor: pointer;
         }
         .content_box {
           @include setPosition(absolute,93px, auto, auto, 0, 960);
