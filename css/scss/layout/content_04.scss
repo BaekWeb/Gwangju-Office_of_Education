@@ -3,7 +3,9 @@
 */
 .content_04 {
   @include setFlex(flex,center,center);
+  width: 1260px;
   height: 110px;
+  margin: 20px auto;
   border: 1px dashed #3e7bbe;
   border-radius: 55px;
 

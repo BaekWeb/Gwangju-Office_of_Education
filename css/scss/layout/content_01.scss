@@ -3,15 +3,21 @@
 */
 .content_01 {
   @include setFlex(flex, space-between,center);
+  width: 1260px;
+  margin: 0 auto;
+  padding: 10px 0;
   // search
   .search {
+    height: 50px;
     border: 2px solid $main;
     border-radius: 0 0 15px 15px;
+    box-sizing: border-box;
     overflow: hidden;
 
     form {
       @include setFlex(flex, center, center);
       margin: 0;
+      background-color: $white;
 
       div {
         position: relative;
@@ -19,30 +25,43 @@
         input[type="text"],
         input[type="submit"] {
           height: 50px;
-          padding: 5px 10px;
           border: none;
           box-sizing: border-box;
           background-color: $trans;
         }
-        input[type="text"] {
-          width: 285px;
-          padding: 0 40px 0 10px;
-        }
-        .key {
-          @include setPosition(absolute, 50%, 10px, auto, auto, 990);
-          transform: translate(0, -50%);
-          text-indent: -10000px;
-          
-          a {
-            width: 24px;
-            height: 24px;
-            background: url("./../images/icon/keyboard.png") no-repeat center;
+
+        &:nth-child(1) {
+          width: 85px;
+          select {
+            padding-left: 10px;
           }
         }
-        input[type="submit"] {
-          width: 50px;
-          text-indent: -10000px;
-          background: url("./../images/icon/search_icon.png") no-repeat center $sub2;
+        &:nth-child(2) {
+          flex: 1;
+          input[type="text"] {
+            width: 285px;
+            padding: 0 40px 0 10px;
+          }
+          .key {
+            @include setPosition(absolute, 50%, 10px, auto, auto, 990);
+            transform: translate(0, -50%);
+            text-indent: -10000px;
+            
+            a {
+              width: 24px;
+              height: 24px;
+              background: url("./../images/icon/keyboard.png") no-repeat center;
+            }
+          }
+        }
+        &:nth-child(3) {
+          width: 45px;
+
+          input[type="submit"] {
+            width: 100%;
+            text-indent: -10000px;
+            background: url("./../images/icon/search_icon.png") no-repeat center $sub2;
+          }
         }
       }
     }
@@ -60,7 +79,7 @@
     }
     ul {
       float: left;
-      margin: 15px 10px;
+      margin: 15px 20px;
       li {
         display: inline-block;
       }

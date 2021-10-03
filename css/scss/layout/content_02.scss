@@ -3,6 +3,8 @@
 */
 .content_02 {
   @include setFlex(flex, center, center);
+  width: 1260px;
+  margin: 0 auto;
   gap: 20px;
   .manifesto,
   .visual,

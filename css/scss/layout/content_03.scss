@@ -4,6 +4,9 @@
 .content_03 {
   @include setFlex(flex,center,center);
   gap: 20px;
+  width: 1260px;
+  margin: 20px auto;
+
 
   .notice,
   .popupBox {
@@ -33,6 +36,7 @@
           h2 {
             position: relative;
             border-radius: 25px;
+            font-weight: 700;
             color: $white;
             background-color: #eb6001;
 
@@ -66,7 +70,7 @@
         h2 {
           @include font-l;
           padding: 10px 20px;
-          cursor: pointer;
+          font-weight: 400;
         }
         .content_box {
           @include setPosition(absolute,93px, auto, auto, 0, 960);
