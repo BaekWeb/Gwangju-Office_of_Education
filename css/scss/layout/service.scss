@@ -151,14 +151,12 @@
             li {
               &.on {
                 h4 {
-                  p {
-                    display: inline-block;
-                    padding: 7px 10px;
-                    border-radius: 25px;
-                    box-shadow: 2px 3px 0px #cdcdcd;
-                    color: $white;
-                    background: #22ba98;
-                  }
+                  display: inline-block;
+                  padding: 7px 10px;
+                  border-radius: 25px;
+                  box-shadow: 2px 3px 0px #cdcdcd;
+                  color: $white;
+                  background: #22ba98;
                 }
                 .tabMenu {
                   @include setFlex(flex,center,flex-start);
